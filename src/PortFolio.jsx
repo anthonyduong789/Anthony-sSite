@@ -19,8 +19,7 @@ import Hitch5 from "./assets/Hitch/Hitch5.png";
 // import Hitch from './assets/Hitch/Hitch1.png';
 
 
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import "./Portfolio.scss"
 
@@ -109,12 +108,34 @@ export default function PortFolio() {
     const [modalClass, setModalClass] = useState("");
     const [isActive, setIsActive] = useState(false);
     const [modalImages, setModalImages] = useState([]);
-
+const [animation, setAnimation] = useState(false);
     const [modalName, setModalName] = useState("");
     const [modalDescription, setModalDescription] = useState("");
     const [link, setLink] = useState("");
 
     const [ImageWidth, setImageWidth] = useState("w-full lg:4/12");
+
+       const animationOn = () => {
+        const windowWidth = window.innerWidth;
+         if (windowWidth < 1000) {
+           setAnimation(false);
+           setIsActive(false);
+         } else {
+           setAnimation(true);
+           setModalClass("");
+           setIsActive(true);
+         }
+       };
+
+       useEffect(() => {
+         window.addEventListener("resize", animationOn); // Add this to handle window resize
+         // Initial check in case the component is already in view when loaded
+         animationOn();
+         return () => {
+           window.removeEventListener("resize", animationOn); // Remove this to handle window resize
+         };
+       }, []);
+
 
     const handleButtonClick = (group) => {  
         setModalImages(GroupImages[group]);
@@ -137,11 +158,17 @@ export default function PortFolio() {
       document.body.classList.remove("modal-active");
       //  document.body.classList.remove("no-scroll");
    
-        setModalClass(modalClass + " out"); // Adds 'out' class for animation or other purposes
-        setTimeout(() => {
+        if (animation){
+          setModalClass(modalClass + " out"); // Adds 'out' class for animation or other purposes
+
+          setTimeout(() => {
+            setIsActive(false);
+            setModalClass("");
+          }, 1300);
+        }else {
           setIsActive(false);
-          setModalClass("");
-        }, 1300);
+        }
+       
     };
 
     return (
