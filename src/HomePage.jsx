@@ -1,13 +1,14 @@
 import React from 'react'
 import meImage from './assets/me.png'
+import './HomePage.css'
 
 export default function HomePage() {
 
     const scrollTo = (id) => {
         const element = document.getElementById(id);
-        element.scrollIntoView({ behavior: "smooth"});
-        // element.focus();
-        
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start"});
+        }
       };
 
 

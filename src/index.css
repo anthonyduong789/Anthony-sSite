@@ -7,3 +7,6 @@ body {
   justify-content: center; */
   
 }
+html{
+  scroll-padding-top: 40px;
+}

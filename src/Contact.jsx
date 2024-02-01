@@ -64,11 +64,12 @@ function ContactPage() {
         class="sectionSize justify-content flex items-center bg-Contact"
         style={{ backgroundColor: "#F2F2F2" }}
       >
-        <div class="container mx-auto px-6 py-12" id="ContactForm">
+        <div class="container mx-auto px-6 py-12">
           <div class="justify-center lg:-mx-6 lg:flex lg:items-center">
             <div
               // id="ContactPage"
               class="mt-8 w-full lg:w-4/12 2xl:w-1/2"
+              id="ContactForm"
             >
               <div
                 class=" shadow-gray-300/50 dark:shadow-black/50 mx-auto w-full overflow-hidden rounded-lg bg-white px-8 py-10 shadow-2xl lg:max-w-xl"
@@ -76,7 +77,9 @@ function ContactPage() {
                 data-aos-delay="150"
                 // data-aos-anchor-placement="bottom-top"
               >
-                <h1 class="text-gray-700 text-lg font-medium">Contact Me</h1>
+                <div>
+                  <h1 class="text-gray-700 text-lg font-medium">Contact Me</h1>
+                </div>
 
                 <form class="mt-6" onSubmit={handleSubmit}>
                   <div class="flex-1">
