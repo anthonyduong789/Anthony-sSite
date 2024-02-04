@@ -194,8 +194,11 @@ const [animation, setAnimation] = useState(false);
 
                 <div class="content">
                   <div class="ScrollContainer">
-                    <div style={{ maxWidth: "700px" }}>
-                      <p class="mb-3 font-normal  text-gray-700 dark:text-gray-400 text-lg">
+                    <div class="w-full "> 
+                      <p
+                        class="mb-3 font-normal text-gray-400 text-lg lg:text-2xl lg:ml-12"
+                        style={{ maxWidth: "700px" }}
+                      >
                         {modalDescription}
                       </p>
                     </div>
@@ -229,27 +232,21 @@ const [animation, setAnimation] = useState(false);
           </div>
           <div className="flex flex-grow-1 row justify-center items-center">
             <div className="ResponsiveContainer md:px-7 justify-center">
-              {
-                CardImage.map((image, index) => {
-                  return (
-                    <Card
-                      image={image}
-                      title={CardTitle[index]}
-                      description={CardDescription[index]}
-                      handleButtonClick={() => {
-                        handleButtonClick(index);
-                      }}
-                      index={index}
-                     
-                      // data-aos-delay={CardAnimationDelay[index]}
-                    />
-                  );
-                })
-              }
+              {CardImage.map((image, index) => {
+                return (
+                  <Card
+                    image={image}
+                    title={CardTitle[index]}
+                    description={CardDescription[index]}
+                    handleButtonClick={() => {
+                      handleButtonClick(index);
+                    }}
+                    index={index}
 
-
-
-             
+                    // data-aos-delay={CardAnimationDelay[index]}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>
