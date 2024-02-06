@@ -1,78 +1,66 @@
-.ResponsiveContainer{
-display: grid;
+.ResponsiveContainer {
+  display: grid;
   width: 100%;
-  
+
   /* height: 100%; */
   /* max-width: 1502px; */
 
-  grid-template-columns: repeat(auto-fit, clamp(350px, 28vw ,28rem));
+  grid-template-columns: repeat(auto-fit, clamp(350px, 28vw, 28rem));
   grid-template-rows: auto;
   gap: 50px;
 
   align-content: center;
-  // justify-content: center; 
-    
-        /* padding-top: 30px; */
+  // justify-content: center;
+
+  /* padding-top: 30px; */
 
   margin-top: clamp(0px, 1vw, 15px);
-
-
 }
 
-
-
-
 #modal-container {
-
-      position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-      display: flex;
-    justify-content: center;
-    align-items: center;
-    background:rgba(0,0,0,.8);
-  transform:scale(0);
-  z-index:1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(0);
+  z-index: 1000;
   &.one {
-    transform:scaleY(.01) scaleX(0);
-    animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    transform: scaleY(0.01) scaleX(0);
+    animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     .modal-background {
       .modal {
-        transform:scale(0);
-        animation: zoomIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-        
+        transform: scale(0);
+        animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
       }
     }
     &.out {
-      transform:scale(1);
-      animation:unfoldOut 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+      transform: scale(1);
+      animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
       .modal-background {
         .modal {
-          animation: zoomOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+          animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
         }
       }
     }
   }
-
 }
 
+.exit {
+  // display: flex;
+  // justify-content: right;
 
-
-
-
- .exit{
-    // display: flex;
-    // justify-content: right;
-    
-    position: sticky;
-    top: 0;
-    background-color: white;
-    width: 100%;
-    // right: 0;
-    // right: auto;
-  }
+  position: sticky;
+  top: 0;
+  background-color: white;
+  width: 100%;
+  // right: 0;
+  // right: auto;
+}
 // code for the modal things
 #modal-container {
   // position:fixed;
@@ -81,62 +69,60 @@ display: grid;
   // width:100%;
   // top:0;
   // left:0;
-      position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-      display: flex;
-    justify-content: center;
-    align-items: center;
-    background:rgba(0,0,0,.8);
-  transform:scale(0);
-  z-index:1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(0);
+  z-index: 1000;
   &.one {
-    transform:scaleY(.01) scaleX(0);
-    animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    transform: scaleY(0.01) scaleX(0);
+    animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     .modal-background {
       .modal {
-        transform:scale(0);
-        animation: zoomIn .5s .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+        transform: scale(0);
+        animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
         // overflow-y: auto; /* Allows scrolling within the modal */
       }
     }
     &.out {
-      transform:scale(1);
-      animation:unfoldOut 1s .3s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+      transform: scale(1);
+      animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
       .modal-background {
         .modal {
-          animation: zoomOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+          animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
         }
       }
     }
   }
-
 }
-
 
 .modal-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-      display: flex;
-    justify-content: center;
-    // align-items: center;
-    background:#000000cc;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  background: #000000cc;
 }
 
-.exitdiv{
+.exitdiv {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  
+
   font-size: clamp(2rem, 4vw, 3rem);
 }
 
-.ScrollContainer{
+.ScrollContainer {
   overflow-y: scroll;
   height: 85vh;
   width: 100%;
@@ -144,49 +130,54 @@ display: grid;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  // padding-bottom: 100px;
 }
-.ScrollContainerBottom{
-  height: 15vh;
+.ScrollContainerBottom {
+  min-height: 10vh;
+  visibility: hidden;
+  // width: 200px;
   width: 100%;
-  background-color: white;
+  background-color: rgb(218, 134, 134);
 }
 
-    .modal {
-      
-     
-      position: fixed;
-      background:white;
-      // width: clamp(300px, 30vw + 2rem, 500px);
-      width: clamp(300px, 70vw, 1000px);
-      margin-top: 50px;
-      height: 95vh;
-      
-      // padding: 0 20px;
-      overflow-y: hidden;
-      //  overflow-y: auto; /* Allows scrolling within the modal */
-      border-radius: 3vmin;
-      // max-width: 500px;
-      font-weight:300;
-  
+.modal {
+  position: fixed;
+  background: white;
+  // width: clamp(300px, 30vw + 2rem, 500px);
+  width: clamp(300px, 70vw, 1000px);
+  margin-top: 45px;
+  height: 90vh;
 
-      h2 {
-        font-size:25px;
-        line-height:25px;
-        margin-bottom:15px;
-      }
-      
-    }
-  
-.ModalNameFont{
+  // padding: 0 20px;
+  overflow-y: hidden;
+  //  overflow-y: auto; /* Allows scrolling within the modal */
+  border-radius: 3vmin;
+  // max-width: 500px;
+  font-weight: 300;
+  z-index: 1200;
+
+  h2 {
+    font-size: 25px;
+    line-height: 25px;
+    margin-bottom: 15px;
+  }
+}
+
+// @media screen and (max-width: 720px){
+//   .modal {
+//     margin-top: 45px;
+//   }
+// }
+
+.ModalNameFont {
   font-size: clamp(2rem, 3vw, 3.5rem);
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   white-space: nowrap;
 }
-.close{
+.close {
   font-size: clamp(1.5rem, 2vw, 2rem);
   color: #aaa;
-  
+
   height: 100%;
   padding-top: 10%;
   padding-right: 10%;
@@ -194,98 +185,95 @@ display: grid;
     color: black;
     cursor: pointer;
   }
-
 }
 
-.ModalInfo{
-  
-  font-family: 'Roboto', sans-serif;
+.ModalInfo {
+  font-family: "Roboto", sans-serif;
 
   // grid-template-columns: 1fr 1fr 1fr;
 }
-
+.no-scroll {
+  overflow: hidden;
+}
 @keyframes unfoldIn {
   0% {
-    transform:scaleY(.005) scaleX(0);
+    transform: scaleY(0.005) scaleX(0);
   }
   50% {
-    transform:scaleY(.005) scaleX(1);
+    transform: scaleY(0.005) scaleX(1);
   }
   100% {
-    transform:scaleY(1) scaleX(1);
+    transform: scaleY(1) scaleX(1);
   }
 }
 
 @keyframes unfoldOut {
   0% {
-    transform:scaleY(1) scaleX(1);
+    transform: scaleY(1) scaleX(1);
   }
   50% {
-    transform:scaleY(.005) scaleX(1);
+    transform: scaleY(0.005) scaleX(1);
   }
   100% {
-    transform:scaleY(.005) scaleX(0);
+    transform: scaleY(0.005) scaleX(0);
   }
 }
 
 @keyframes zoomIn {
   0% {
-    transform:scale(0);
+    transform: scale(0);
   }
   100% {
-    transform:scale(1);
+    transform: scale(1);
   }
 }
 
 @keyframes zoomOut {
   0% {
-    transform:scale(1);
+    transform: scale(1);
   }
   100% {
-    transform:scale(0);
+    transform: scale(0);
   }
 }
 // disables animation on mobile
-@media screen and (max-width: 1000px) {
-
-.modal{
-      // margin-top: calc(2.5vh + 40px); 
-      height: calc(95vh - 40px);
-}
+@media screen and (max-width: 720px) {
+  .modal {
+    // margin-top: calc(2.5vh + 40px);
+    height: calc(95vh - 40px);
+  }
 
   #modal-container {
-    position:fixed;
-  display:table;
+    position: fixed;
+    display: table;
 
-  height:100%;
-  width:100%;
-  top:0;
-  left:0;
-  transform: none;
-  z-index:1;
-  &.one {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
     transform: none;
-    animation: none;
-    .modal-background {
-      .modal {
-        transform: none;
-        animation: none;
-      }
-    }
-    &.out {
+    z-index: 1;
+    &.one {
       transform: none;
       animation: none;
       .modal-background {
         .modal {
+          transform: none;
           animation: none;
         }
       }
+      &.out {
+        transform: none;
+        animation: none;
+        .modal-background {
+          .modal {
+            animation: none;
+          }
+        }
+      }
     }
-   
   }
-}
-.modal{
-  width: clamp(300px, 100vw, 500px);
-
-}
+  .modal {
+    width: clamp(300px, 100vw, 500px);
+  }
 }
