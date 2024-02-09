@@ -1,14 +1,11 @@
 
-import React, { useState } from "react";
-import meImage from './assets/me.png'
+import React, { useState, useEffect } from "react";
 import './HomePage.css'
 import {Mosaic} from "react-loading-indicators";
 
-export default function HomePage() {
+export default function HomePage({src}) {
   const [isLoading, setIsLoading] = useState(true);
-  function handleImageLoad() {
-    setIsLoading(false);
-  }
+  
 
     const scrollTo = (id) => {
         const element = document.getElementById(id);
@@ -16,27 +13,28 @@ export default function HomePage() {
           element.scrollIntoView({ behavior: "smooth", block: "start"});
         }
       };
-  // if (isLoading) {
-  //   return <div>Loading...</div>;
-  // }
+ 
 
-  return (
+  useEffect(() => {
+    const img = new Image();
+    img.src = src;
+    img.onload = () => setIsLoading(false);
+  }), [];
+
+
+  return isLoading ? (
+    <section className="min-h-screen w-full flex justify-center items-center">
+      <div>
+        <Mosaic color="#1e85d5" size="large" text="" textColor="" />
+      </div>
+    </section>
+  ) : (
     <section
       className="min-h-screen w-full flex justify-center lg:items-center"
       id="home"
     >
-      {isLoading && (
-        <div className="w-full min-h-full flex justify-center items-center">
-          <Mosaic color="#1e85d5" size="large" text="" textColor="" />
-        </div>
-      )}
-
-      <div
-        style={{ display: isLoading ? "none" : "block" }}
-        class="color-black"
-      >
+      <div class="color-black">
         <div
-          key={isLoading}
           style={{ maxWidth: "1200px" }}
           class="container mx-auto flex md:px-20 md:py-10 lg:flex-row flex-col items-center "
         >
@@ -90,11 +88,11 @@ export default function HomePage() {
             <img
               class="object-cover object-center rounded"
               alt="hero"
-              src={meImage}
+              src={src}
               data-aos="zoom-in"
               data-aos-delay="400"
               // loading="lazy"
-              onLoad={handleImageLoad}
+              // onLoad={handleImageLoad}
             />
           </div>
         </div>

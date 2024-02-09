@@ -9,7 +9,7 @@ import PortFolio from './PortFolio'
 import AboutMe from './AboutMe'
 import Contact from './Contact'
 import StickyNavBar from './StickyNavBar'
-
+import meImage from './assets/me.png'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <div className="">
-        <HomePage />
+        <HomePage src={meImage} />
 
         <div>
           <StickyNavBar />
