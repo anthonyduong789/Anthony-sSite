@@ -30,9 +30,9 @@ export default function HomePage({src}) {
             if (imageReady) {
               setIsLoading(false);
             }
-          }, 500) 
+          }, 100) 
         }
-      }, 1500);
+      }, 1000);
       
     // }), 10000;
   }), [];
