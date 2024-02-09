@@ -145,8 +145,8 @@
   background: white;
   // width: clamp(300px, 30vw + 2rem, 500px);
   width: clamp(300px, 70vw, 1000px);
-  margin-top: 45px;
-  height: 90vh;
+  margin-top: 15px;
+  height: 98vh;
 
   // padding: 0 20px;
   overflow-y: hidden;
@@ -274,6 +274,8 @@
     }
   }
   .modal {
+    margin-top: 45px;
+
     width: clamp(300px, 100vw, 500px);
   }
 }

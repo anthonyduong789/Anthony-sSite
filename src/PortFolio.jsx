@@ -118,6 +118,7 @@ export default function PortFolio() {
     if (windowWidth < 720) {
       setAnimation(false);
       setIsActive(false);
+      document.body.classList.remove("no-scroll");
     } else {
       setAnimation(true);
       setModalClass("");
@@ -139,7 +140,7 @@ export default function PortFolio() {
     setModalName(ModalName[group]);
     setModalDescription(ModalDescription[group]);
     setIsActive(true);
-    document.body.classList.add("modal-active");
+
     document.body.classList.add("no-scroll");
     setModalClass("one");
     if (group === 1) {
@@ -149,7 +150,7 @@ export default function PortFolio() {
     }
   };
 
-  function ImageLoader( { image, ImageWidth} ) {
+  function ImageLoader({ image, ImageWidth }) {
     const [isLoading, setIsLoading] = useState(true);
 
     function handleImageLoad() {
@@ -168,23 +169,22 @@ export default function PortFolio() {
           />
         )}
         <img
-        
           alt="Description"
           onLoad={handleImageLoad}
           className="m-0 mb-5 w-full lg:"
-          src= {image}
+          src={image}
           // loading="lazy"
-          style={{ display: isLoading ? "none" : "block" , maxWidth: {ImageWidth} }}
-
+          style={{
+            display: isLoading ? "none" : "block",
+            maxWidth: { ImageWidth },
+          }}
         />
       </div>
     );
   }
 
-
   const handleModalClick = () => {
-    document.body.classList.remove("modal-active");
-     document.body.classList.remove("no-scroll");
+    document.body.classList.remove("no-scroll");
 
     if (animation) {
       setModalClass(modalClass + " out"); // Adds 'out' class for animation or other purposes
@@ -231,8 +231,7 @@ export default function PortFolio() {
                   </div>
 
                   {modalImages.map((image) => (
-                    <ImageLoader image={image} ImageWidth={ImageWidth}/>
-                    
+                    <ImageLoader image={image} ImageWidth={ImageWidth} />
                   ))}
 
                   <div className="ScrollContainerBottom">dkljlkajflksj</div>
