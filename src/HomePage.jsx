@@ -26,15 +26,17 @@ export default function HomePage() {
       id="home"
     >
       {isLoading && (
-        <Mosaic color="#1e85d5" size="large" text="" textColor="" />
+        <div className="w-full min-h-full flex justify-center items-center">
+          <Mosaic color="#1e85d5" size="large" text="" textColor="" />
+        </div>
       )}
-      
+
       <div
         style={{ display: isLoading ? "none" : "block" }}
         class="color-black"
       >
         <div
-          key = {isLoading}
+          key={isLoading}
           style={{ maxWidth: "1200px" }}
           class="container mx-auto flex md:px-20 md:py-10 lg:flex-row flex-col items-center "
         >
