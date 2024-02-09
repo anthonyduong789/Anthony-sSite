@@ -5,6 +5,7 @@ import {Mosaic} from "react-loading-indicators";
 
 export default function HomePage({src}) {
   const [isLoading, setIsLoading] = useState(true);
+  const [imageReady, setImageReady] = useState(false);
   
 
     const scrollTo = (id) => {
@@ -18,7 +19,22 @@ export default function HomePage({src}) {
   useEffect(() => {
     const img = new Image();
     img.src = src;
-    img.onload = () => setIsLoading(false);
+    img.onload = () => setImageReady(true);
+    // setInterval(() => {
+      setTimeout(() => {
+        if (imageReady) {
+          setIsLoading(false);
+        }
+        else{
+          setInterval(() => {
+            if (imageReady) {
+              setIsLoading(false);
+            }
+          }, 500) 
+        }
+      }, 1500);
+      
+    // }), 10000;
   }), [];
 
 
