@@ -16,7 +16,7 @@ import Hitch4 from "./assets/Hitch/Hitch4.png";
 import Hitch5 from "./assets/Hitch/Hitch5.png";
 
 // import Hitch from './assets/Hitch/Hitch1.png';
-
+import { OrbitProgress } from "react-loading-indicators";
 import { useState, useEffect } from "react";
 
 import "./Portfolio.scss";
@@ -149,6 +149,39 @@ export default function PortFolio() {
     }
   };
 
+  function ImageLoader( { image, ImageWidth} ) {
+    const [isLoading, setIsLoading] = useState(true);
+
+    function handleImageLoad() {
+      setIsLoading(false);
+    }
+
+    return (
+      <div>
+        {isLoading && (
+          <OrbitProgress
+            variant="track-disc"
+            color="#599bdd"
+            size="medium"
+            text=""
+            textColor=""
+          />
+        )}
+        <img
+        
+          alt="Description"
+          onLoad={handleImageLoad}
+          className="m-0 mb-5 w-full lg:"
+          src= {image}
+          // loading="lazy"
+          style={{ display: isLoading ? "none" : "block" , maxWidth: {ImageWidth} }}
+
+        />
+      </div>
+    );
+  }
+
+
   const handleModalClick = () => {
     document.body.classList.remove("modal-active");
      document.body.classList.remove("no-scroll");
@@ -198,13 +231,8 @@ export default function PortFolio() {
                   </div>
 
                   {modalImages.map((image) => (
-                    <div>
-                      <img
-                        src={image}
-                        className="m-0 mb-5 w-full lg:"
-                        style={{ maxWidth: ImageWidth }}
-                      />
-                    </div>
+                    <ImageLoader image={image} ImageWidth={ImageWidth}/>
+                    
                   ))}
 
                   <div className="ScrollContainerBottom">dkljlkajflksj</div>

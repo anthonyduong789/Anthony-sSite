@@ -1,8 +1,14 @@
-import React from 'react'
+
+import React, { useState } from "react";
 import meImage from './assets/me.png'
 import './HomePage.css'
+import {Mosaic} from "react-loading-indicators";
 
 export default function HomePage() {
+  const [isLoading, setIsLoading] = useState(true);
+  function handleImageLoad() {
+    setIsLoading(false);
+  }
 
     const scrollTo = (id) => {
         const element = document.getElementById(id);
@@ -10,13 +16,25 @@ export default function HomePage() {
           element.scrollIntoView({ behavior: "smooth", block: "start"});
         }
       };
-
-
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
-    <section className="min-h-screen w-full flex justify-center lg:items-center" id="home">
-      <div class="color-black">
+    <section
+      className="min-h-screen w-full flex justify-center lg:items-center"
+      id="home"
+    >
+      {isLoading && (
+        <Mosaic color="#1e85d5" size="large" text="" textColor="" />
+      )}
+      
+      <div
+        style={{ display: isLoading ? "none" : "block" }}
+        class="color-black"
+      >
         <div
+          key = {isLoading}
           style={{ maxWidth: "1200px" }}
           class="container mx-auto flex md:px-20 md:py-10 lg:flex-row flex-col items-center "
         >
@@ -73,6 +91,8 @@ export default function HomePage() {
               src={meImage}
               data-aos="zoom-in"
               data-aos-delay="400"
+              // loading="lazy"
+              onLoad={handleImageLoad}
             />
           </div>
         </div>
