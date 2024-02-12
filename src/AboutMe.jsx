@@ -120,10 +120,21 @@ export default function AboutMe() {
                 <li>
                   LinkedIn:{" "}
                   <a
-                    href="https:/www.linkedin.com/in/AnthonyDuong789"
+                    href="https://www.linkedin.com/in/anthonyduong789"
+                    target="_blank"
                     class="text-blue-500 hover:underline"
                   >
-                    linkedin.com/in/AnthonyDuong789
+                    linkedin.com/in/anthonyduong789
+                  </a>
+                </li>
+                <li>
+                  Github:{" "}
+                  <a
+                    href="https://github.com/anthonyduong789"
+                    target="_blank"
+                    class="text-blue-500 hover:underline"
+                  >
+                    github.com/anthonyduong789
                   </a>
                 </li>
               </ul>

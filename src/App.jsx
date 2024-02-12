@@ -19,9 +19,10 @@ function App() {
   // below listed default settings
   AOS.init({
     duration: 500,
-    easing: "ease-in-out",
-    // once: true,
-    // mirror: true,
+    // easing: "ease-in-out",
+    easing: "ease-in-out-cubic",
+    once: true,
+    mirror: true,
     // anchorPlacement: "bottom-bottom",
   });
 
