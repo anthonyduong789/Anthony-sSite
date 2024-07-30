@@ -42,7 +42,7 @@ function ContactPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      }).then((res) => {setEmail(""); setFullName(""); setMessage("");});
+      }).lhen(() => {setEmail(""); setFullName(""); setMessage("");});
 
       const result = await response.json();
 
@@ -61,29 +61,26 @@ function ContactPage() {
   return (
     <>
       <section
-        class="sectionSize justify-content flex items-center bg-Contact"
+        className="sectionSize justify-content flex items-center bg-Contact"
         style={{ backgroundColor: "#F2F2F2" }}
       >
-        <div class="container mx-auto px-6 py-12">
-          <div class="justify-center lg:-mx-6 lg:flex lg:items-center">
+        <div className="container mx-auto px-6 py-12">
+          <div className="justify-center lg:-mx-6 lg:flex lg:items-center">
             <div
               // id="ContactPage"
-              class="mt-8 w-full lg:w-4/12 2xl:w-1/2"
+              className="mt-8 w-full lg:w-4/12 2xl:w-1/2"
               id="ContactForm"
             >
               <div
-                class=" shadow-gray-300/50 dark:shadow-black/50 mx-auto w-full overflow-hidden rounded-lg bg-white px-8 py-10 shadow-2xl lg:max-w-xl"
-                data-aos="fade-up"
-                data-aos-delay="150"
-                // data-aos-anchor-placement="bottom-top"
+                className=" shadow-gray-300/50 dark:shadow-black/50 mx-auto w-full overflow-hidden rounded-lg bg-white px-8 py-10 shadow-2xl lg:max-w-xl"
               >
                 <div>
-                  <h1 class="text-gray-700 text-lg font-medium">Contact Me</h1>
+                  <h1 className="text-gray-700 text-lg font-medium">Contact Me</h1>
                 </div>
 
-                <form class="mt-6" onSubmit={handleSubmit}>
-                  <div class="flex-1">
-                    <label class="text-gray-600 mb-2 block text-sm">
+                <form className="mt-6" onSubmit={handleSubmit}>
+                  <div className="flex-1">
+                    <label className="text-gray-600 mb-2 block text-sm">
                       Full Name
                     </label>
                     <input
@@ -91,12 +88,12 @@ function ContactPage() {
                       placeholder="James Bond"
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
-                      class="text-gray-700 placeholder-gray-400 border-black focus:ring-blue-400 mt-2 block w-full rounded-md border bg-white px-5 py-3 focus:outline-none focus:ring focus:ring-opacity-40 "
+                      className="text-gray-700 placeholder-gray-400 border-black focus:ring-blue-400 mt-2 block w-full rounded-md border bg-white px-5 py-3 focus:outline-none focus:ring focus:ring-opacity-40 "
                     />
                   </div>
 
-                  <div class="mt-6 flex-1">
-                    <label class="text-gray-600 mb-2 block text-sm">
+                  <div className="mt-6 flex-1">
+                    <label className="text-gray-600 mb-2 block text-sm">
                       Email
                     </label>
                     <input
@@ -104,16 +101,16 @@ function ContactPage() {
                       placeholder="Introduce your email address"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      class="text-gray-700 placeholder-gray-400 border-black focus:ring-blue-400 mt-2 block w-full rounded-md border bg-white px-5 py-3 focus:outline-none focus:ring focus:ring-opacity-40"
+                      className="text-gray-700 placeholder-gray-400 border-black focus:ring-blue-400 mt-2 block w-full rounded-md border bg-white px-5 py-3 focus:outline-none focus:ring focus:ring-opacity-40"
                     />
                   </div>
 
-                  <div class="mt-6 w-full">
-                    <label class="text-gray-600  mb-2 block text-sm">
+                  <div className="mt-6 w-full">
+                    <label className="text-gray-600  mb-2 block text-sm">
                       Message
                     </label>
                     <textarea
-                      class="text-gray-700 placeholder-gray-400 border-black  mt-2 block h-32 w-full rounded-md border bg-white px-5 py-3 focus:outline-none focus:ring focus:ring-opacity-40 md:h-48"
+                      className="text-gray-700 placeholder-gray-400 border-black  mt-2 block h-32 w-full rounded-md border bg-white px-5 py-3 focus:outline-none focus:ring focus:ring-opacity-40 md:h-48"
                       placeholder="Feel free to drop a message!"
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
@@ -121,7 +118,7 @@ function ContactPage() {
                   </div>
 
                   <button
-                    class="bg-blue-500 hover:bg-blue-400 focus:ring-blue-300 text- mt-6 w-full transform rounded-md px-6 py-3 text-sm font-medium capitalize tracking-wide transition-colors duration-300 focus:outline-none focus:ring focus:ring-opacity-50"
+                    className="bg-blue-500 hover:bg-blue-400 focus:ring-blue-300 text- mt-6 w-full transform rounded-md px-6 py-3 text-sm font-medium capitalize tracking-wide transition-colors duration-300 focus:outline-none focus:ring focus:ring-opacity-50"
                     onClick={handleSubmit}
                   >
                     get in touch
@@ -130,23 +127,20 @@ function ContactPage() {
               </div>
             </div>
             <div
-              class="h-full lg:mx-6 lg:mt-0 lg:w-1/4"
+              className="h-full lg:mx-6 lg:mt-0 lg:w-1/4"
               id="ContactInfo"
-              data-aos="zoom-in-up"
-              data-aos-delay="100"
-              data-aos-anchor-placement="top-bottom"
             >
               {/* <img src=} alt="" /> */}
 
-              <div class="mt-8 space-y-8 md:mt-8">
-                {/* <p class="-mx-2 flex items-start">
+              <div className="mt-8 space-y-8 md:mt-8">
+                {/* <p className="-mx-2 flex items-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-blue-500 dark:text-blue-400 mx-2 h-6 w-6"
+                  className="text-blue-500 dark:text-blue-400 mx-2 h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth={2}
                 >
                   <path
                     stroke-linecap="round"
@@ -160,62 +154,62 @@ function ContactPage() {
                   />
                 </svg>
 
-                <span class="text-gray-700 dark:text-gray-400 mx-2 w-72 truncate">
+                <span className="text-gray-700 dark:text-gray-400 mx-2 w-72 truncate">
                   Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi 96522
                 </span>
               </p> */}
 
-                <p class="flex">
+                <p className="flex">
                   <a href="tel:760-575-1079">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="text-blue-500 dark:text-blue-400 mx-2 h-6 w-6"
+                      className="text-blue-500 dark:text-blue-400 mx-2 h-6 w-6"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
-                      stroke-width="2"
+                      strokeWidth="2"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                       />
                     </svg>
                   </a>
 
-                  <span class="text-gray-700 mx-2  truncate">
+                  <span className="text-gray-700 mx-2  truncate">
                     (760) 575-1079
                   </span>
                 </p>
 
-                <p class="flex items-start">
+                <p className="flex items-start">
                   <a href="mailto:anthonyduong789@gmail.com">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="text-blue-500 dark:text-blue-400 mx-2 h-6 w-6"
+                      className="text-blue-500 dark:text-blue-400 mx-2 h-6 w-6"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
-                      stroke-width="2"
+                      strokeWidth="2"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                       />
                     </svg>
                   </a>
 
-                  <span class="text-gray-700 mx-2 truncate">
+                  <span className="text-gray-700 mx-2 truncate">
                     anthonyduong789@gmail.com
                   </span>
                 </p>
               </div>
 
-              <div class="mt-6 md:mt-8">
-                <h3 class="text-gray-600">Follow Me</h3>
+              <div className="mt-6 md:mt-8">
+                <h3 className="text-gray-600">Follow Me</h3>
 
-                <div class="mt-4 flex ">
+                <div className="mt-4 flex ">
                   <a href="https://github.com/anthonyduong789">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -229,7 +223,7 @@ function ContactPage() {
                   </a>
 
                   <a
-                    class="dark:hover:text-blue-400 text-gray-400 hover:text-blue-500 mx-1.5 transform transition-colors duration-300"
+                    className="dark:hover:text-blue-400 text-gray-400 hover:text-blue-500 mx-1.5 transform transition-colors duration-300"
                     href="https:/www.linkedin.com/in/AnthonyDuong789"
                   >
                     <svg

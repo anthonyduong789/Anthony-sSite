@@ -5,7 +5,7 @@ import HomePage from './HomePage'
 import './App.css'
 import AOS from "aos";
 import "aos/dist/aos.css";
-import PortFolio from './PortFolio'
+import PortFolio from "./PortFolio"
 import AboutMe from './AboutMe'
 import Contact from './Contact'
 import StickyNavBar from './StickyNavBar'

@@ -26,7 +26,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.8);
   transform: scale(0);
   z-index: 1000;
   &.one {
@@ -124,16 +123,17 @@
 
 .ScrollContainer {
   overflow-y: scroll;
-  height: 85vh;
+  height: 100vh;
   width: 100%;
-  padding: 0 20px;
+  padding-bottom: 30vh;
+  // padding: 0 px;
   display: flex;
   flex-direction: column;
   align-items: center;
   // padding-bottom: 100px;
 }
 .ScrollContainerBottom {
-  min-height: 10vh;
+  // min-height: ;
   visibility: hidden;
   // width: 200px;
   width: 100%;
