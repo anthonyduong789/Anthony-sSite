@@ -5,7 +5,7 @@ import HomePage from './HomePage'
 import './App.css'
 import AOS from "aos";
 import "aos/dist/aos.css";
-import PortFolio from "./PortFolio"
+import Portfolio from "./Portfolio"
 import AboutMe from './AboutMe'
 import Contact from './Contact'
 import StickyNavBar from './StickyNavBar'
@@ -34,7 +34,7 @@ function App() {
         <div>
           <StickyNavBar />
           <AboutMe />
-          <PortFolio />
+          <Portfolio />
           <Contact />
         </div>
       </div>
