@@ -35,8 +35,6 @@ const ModalTemplate = ({ modalName, children }) => {
     }
   };
 
-
-
   const animationOn = () => {
     const windowWidth = window.innerWidth;
     if (windowWidth < 720) {
@@ -59,7 +57,7 @@ const ModalTemplate = ({ modalName, children }) => {
     <>
       {modalActive ? (
         <div id="modal-container" className={modalContainer}>
-          <div className="modal-background bg-gray-500 bg-opacity-75 transition-opacity">
+          <div className="modal-background  transition-opacity">
             <div className="modal ">
               <div className="bg-gray-100 text-neutral-700 font-medium md:text-lg p-3 border-b border-neutral-300 flex sm:text-md">
                 {modalName}
