@@ -12,10 +12,7 @@ export default function AboutMe() {
             <div>
               <h2 className="text-xl font-semibold mb-2">Summary</h2>
               <p className="text-gray-700">
-                I'm a full-stack developer specializing in building robust and
-                with a passion for both front-end and back-end development, I
-                deliver comprehensive solutions from concept to deployment. Open
-                to job opportunities and freelance work—feel free to reach out!
+I'm a full-stack developer dedicated to crafting seamless, end-to-end web applications. With expertise in both front-end and back-end development, I deliver complete solutions from concept to deployment. Open to new opportunities and freelance work—let’s connect!
               </p>
             </div>
 
