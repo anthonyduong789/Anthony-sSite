@@ -3,8 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 export const userInteractionSlice = createSlice({
   name: "userInteraction",
   initialState: {
-    modalContainer: "hidden",
-    modalActive: false,
+    // modalContainer: "hidden",
+    // modalActive: false,
+
+    modalContainer: "one",
+    modalActive: true,
+    // TODO:
   },
   reducers: {
     defaultState: (state) => {

@@ -1,7 +1,5 @@
-import {  useDispatch } from "react-redux";
-import {
-  showModal,
-} from "./reducers/userInteraction";
+import { useDispatch } from "react-redux";
+import { showModal } from "./reducers/userInteraction";
 
 import LearningModal from "./components/LearningSite/LearningModal";
 import HitchModalContent from "./components/Hitch/HitchModalContent";
@@ -12,9 +10,10 @@ import LearningSiteCardImage from "./assets/LearningSite/LearningSiteCardImage.p
 import HitchLogo from "./assets/Hitch/HitchLogo.png";
 
 import SolutionsUnifiedLogo from "./assets/SolutionsUnified/SolutionsUnifiedLogo.png";
+import SolutionUnifiedContent from "./components/SolutionsUnified/SolutionUnifiedContent";
 
 // import Hitch from './assets/Hitch/Hitch1.png';
-import { useState, } from "react";
+import { useState } from "react";
 import "./Portfolio.scss";
 import ModalTemplate from "./components/portfolio/ModalTemplate";
 import { Card } from "./components/Card";
@@ -26,7 +25,7 @@ const CardInfo = {
     description:
       "Work with a start-up that focuses on streamlining Medical-Device manufacturing. While I was there, I was able to work on their Environment Site and build out admin controls for their Members page and Products Page.",
     modalTitle: "Solutions Unified",
-    // modalContent: <FamilyBulliesContent />,
+    modalContent: <SolutionUnifiedContent />,
   },
   "Business Site for a Frenchie Dog and Breeding Business": {
     cardImage: FamilyBulliesCard,
@@ -58,7 +57,9 @@ const CardInfo = {
 
 export default function PortFolio() {
   const [modalTitle, setModalTitle] = useState("");
-  const [modalContent, setModalContent] = useState(null);
+  const [modalContent, setModalContent] = useState(
+    CardInfo["Solutions Unified (Internship)"].modalContent
+  );
 
   const dispatch = useDispatch();
 
@@ -66,14 +67,11 @@ export default function PortFolio() {
     setModalTitle(CardInfo[key].modalTitle);
     setModalContent(CardInfo[key].modalContent);
     dispatch(showModal());
-   
   };
-
-
 
   return (
     <section className="w-full min-h-screen flex items-center justify-center">
-    {/* where the modal will be displayed */}
+      {/* where the modal will be displayed */}
       <ModalTemplate modalName={modalTitle}>{modalContent}</ModalTemplate>
 
       <div className="container" id="projects">
@@ -108,4 +106,3 @@ export default function PortFolio() {
     </section>
   );
 }
-
