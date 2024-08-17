@@ -19,7 +19,7 @@ import ModalTemplate from "./components/portfolio/ModalTemplate";
 import { Card } from "./components/Card";
 
 const CardInfo = {
-  "Solutions Unified (Internship)": {
+  "Solutions Unified": {
     cardImage: SolutionsUnifiedLogo,
     title: "Solutions Unified (Internship)",
     description:
@@ -57,9 +57,7 @@ const CardInfo = {
 
 export default function PortFolio() {
   const [modalTitle, setModalTitle] = useState("");
-  const [modalContent, setModalContent] = useState(
-    CardInfo["Solutions Unified (Internship)"].modalContent
-  );
+  const [modalContent, setModalContent] = useState(null);
 
   const dispatch = useDispatch();
 
@@ -80,8 +78,8 @@ export default function PortFolio() {
             Past Projects & Experience
           </h2>
           <p className="my-4 text-lg text-gray-500">
-            Here are some of the projects I have worked on in the past. Let me
-            know if you would like to know more!
+            Here are some of the projects I have worked on in the past. Click on
+            the cards to learn more about each project.
           </p>
         </div>
         <div className="flex flex-grow-1 row justify-center items-center">
